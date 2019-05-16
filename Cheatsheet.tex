@@ -1,5 +1,81 @@
-\documentclass[10pt,a4paper,twocolumn,twoside]{article}
+\documentclass[8pt,a4paper,twocolumn,twoside]{article}
+\usepackage[a4paper,total={20cm, 28.5cm},headsep=0.3cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{sectsty}
+\usepackage{titlesec}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{amsmath}
 
+\titleformat{\subsection}{\small\bfseries}{\thesection}{1em}{}
+\titleformat{\subsubsection}{\footnotesize\bfseries}{\thesection}{1em}{}
+\sectionfont{\fontsize{10}{8}\selectfont}
+
+\titlespacing*{\section}{0pt}{0.1pt}{0.1pt}
+\titlespacing*{\subsection}{0pt}{0.1pt}{0.1pt}
+\titlespacing*{\subsubsection}{0pt}{0.1pt}{0.1pt}
+
+\setlength{\columnseprule}{1pt}
+
+\def\abs#1{|#1|}
 \begin{document}
-    hello worlds
+    \section*{Uegentige Integraler:}
+        \subsection*{Sammenligningskriteriet:}
+        La $f,g : [a:\infty)\rightarrow \mathbb{R}$ , kontinuerlig og positiv. Anta
+        $f(x)\geq(x)$ for alle x:
+        \begin{enumerate}[topsep = 0pt,partopsep = 0pt, itemsep = 0cm]
+            \item Hvis $\int_a^\infty f(x) dx$ Konvergerer $\Rightarrow$ $\int_a^\infty g(x) dx$ Konvergerer
+            \item Hvis $\int_a^\infty g(x) dx$ Divergerer $\Rightarrow$ $\int_a^\infty f(x) dx$ Divergerer
+        \end{enumerate}
+        \subsection*{Grensesammenligningskriteriet:}
+        La $f,g : [a:\infty)\rightarrow \mathbb{R}$ , kontinuerlig og positiv.
+        \begin{enumerate}[topsep = 0pt,partopsep = 0pt, itemsep = 0cm]
+            \item $\int_a^\infty f(x)dx$ Konvergerer og $\lim_{x\to\infty}\frac{g(x)}{f(x)}<\infty \Rightarrow \int_a^\infty g(x)$ Konvergerer 
+            \item $\int_a^\infty f(x)dx$ Divergerer og $\lim_{x\to\infty}\frac{g(x)}{f(x)}>0 \Rightarrow \int_a^\infty g(x)$ Divergerer
+        \end{enumerate}
+        \subsection*{Viktige Integraler:}
+        $\int_0^1 \frac{dx}{x^p}$ Konvergerer for $p<1$, divergerer for $p\geq1$\\
+        $\int_1^\infty\frac{dx}{x^p}$Konvergerer for $p>1$,divergerer for $p\leq1$\\
+    
+    \section*{Taylorpolynom:}
+        \subsection*{Taylors formel med restledd:}
+        Anta f og den n+1 første deriverte er kont på $[a,b]$:\\
+        $f(b) = T_n f(b)+\frac{1}{n!}\int_a^b f^{n+1}(t)(b-t)^n dt$
+        \subsection*{Lagranges restleddformel}
+        Anta f of dens n+1 første deriverte er kont på $[a,b]$\\
+        $R_nf(x) = \frac{f^{n+1}(c)}{(n+1)!}(x-a)^{n+1}$
+    \section*{Funksjonsfølger:}
+        \subsection*{Punktvis og uniform konvergens:}
+            \subsubsection*{Definisjon av punktvis konvergens:}
+            La $\{f_n\}$ være en følge som er definert på en mengde A, og la $f$ være en funksjon definert på 
+            samme mengde A. ${f_n}$ Konvergerer punktvis mot $f$ på A, Hvis:
+            $\lim_{n\to\infty}f_n(x)=f(x)$ for alle x i A
+            \subsubsection*{Definisjon av avstand mellom to funksjoner over A:}
+            $f$ og $g$ er definert på samme mengde A. avstanden blir da:
+            $d_A(f,g) = sup\{\abs{f(x)-g(x):x\in A}\}$
+            \subsubsection*{Definisjon av uniform kovergens:}
+            En funksjonsfølge $\{f_n\}$, definert på A, konvergerer uniformt mot $f$(Også definert på A) hvis:
+            $\lim_{n\to\infty}d_A(f,f_n) = 0$
+            \subsubsection*{Dinis teorem:}
+            Anta at $\{f_n\}$ er en voksende følge av kont. funksjoner som konvergerer punktvis mot en kont.
+            funksjon $f$ på et lukket, begrenset intervall $[a,b]$. Da konvergerer $\{f_n\}$ uniformt mot $f$ på $[a,b]$
+        \subsection*{Integrasjon og derivasjon av funksjonsfølger}
+            \subsubsection*{Integrasjon av funksjonsfølger}
+            $\{f_n\}$ er en føge av funksjoner som konvergerer uniformt mot $f$ på [a,b], da er $\lim_{n\to\infty}\int_c^x f_n(t)dt = \int_c^x\lim_{n\to\infty}f_n(t)dt=\int_c^xf(t)dt$
+            for $c \in [a,b]$ dette gjelder også for\\ $\lim_{n\to\infty}\int_a^\infty f_n(t)dt = \int_a^\infty\lim_{n\to\infty}f_n(t)dt=\int_c^xf(t)dt$
+            \subsubsection*{Derivasjon av funksjonsfølger}
+            $\{f_n\}$ er en funksjonsfølge på [a,b], og de deriverte $f'_n$ konvergerer uniformt mot en funksjon h. Anta 
+            at $\{f_n(d)\}$ konvergerer for et tall $d\in [a,b]$. Da konvergerer$\{f_n\}$ mot en deriverbar funksjon $f$ og $f'=h$\\
+            $\lim_{n\to\infty}f'_n(x)=[\lim_{n\to\infty}f_n(x)]'$
+            
+    \section*{Rekker}
+        \subsection*{Divergenstesten}
+        $\sum_{n=0}^\infty a_n \text{Konveregerer} \Leftrightarrow \lim_{n\to\infty}a_n=0$
+        \subsection*{Egenskaper ved rekker}
+        La $\sum_{n=0}^\infty a_n$ og $\sum_{n=0}^\infty b_n$ være konvergente rekker:
+        \begin{enumerate}[topsep = 0pt,partopsep = 0pt, itemsep = 0cm]
+            \item $\sum_{n=0}^\infty (a_n \pm b_n) = \sum_{n=0}^\infty a_n \pm \sum_{n=0}^\infty b_n$
+            \item $\sum_{n=0}^\infty ca_n=c\sum_{n=0}^\infty a_n$
+        \end{enumerate}
+ 
 \end{document}
