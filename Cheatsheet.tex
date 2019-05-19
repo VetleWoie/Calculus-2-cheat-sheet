@@ -17,7 +17,7 @@
 
 \setlength{\columnseprule}{1pt}
 
-\def\abs#1{|#1|}
+\def\abs#1{\lvert #1 \rvert}
 \def\real{\mathbb{R}}
 \def\suminfty#1#2{\sum_{n=#1}^\infty #2}
 
@@ -78,6 +78,11 @@
             \item $\sum_{n=0}^\infty (a_n \pm b_n) = \sum_{n=0}^\infty a_n \pm \sum_{n=0}^\infty b_n$
             \item $\sum_{n=0}^\infty ca_n=c\sum_{n=0}^\infty a_n$
         \end{enumerate}
+        \subsection*{Absolutt og betinget konvergens}
+        \subsubsection*{Definisjon:}
+        Vi sier at rekken $\sum a_n$ konvergerer absolutt dersom $\sum\abs{a_n}$ konvergerer.
+        \subsubsection*{Lemma:}
+        Dersom $\sum a_n$ er betinget konvergent, divergerer både $\sum a_n^+$ og $\sum a_n^-$
         \subsection*{Divergenstesten:}
         $\sum_{n=0}^\infty a_n \text{Konveregerer} \Leftrightarrow \lim_{n\to\infty}a_n=0$
         \subsection*{Integraltesten:}
@@ -95,8 +100,26 @@
             \item Anta at $\suminfty{1}{a_n}$ konvergerer og at $\lim_{n\to\infty}\frac{b_n}{a_n}<\infty$. Da konvergerer også $\suminfty{1}{b_n}$.
             \item Anta at $\suminfty{1}{a_n}$ divergerer og at $\lim_{n\to\infty}>0$. Da \\divergerer også $\suminfty{1}{b_n}$
         \end{enumerate}
+        \subsection*{Forholdstesten:}
+        La $\suminfty{0}{a_n}$ være en rekke og anta at grensen $\lim_{n\to\infty}\abs{\frac{a_{n+1}}{a_n}}=a$ eksisterer(Den kan være $\infty$!). Da gjelder:
+        \begin{enumerate}
+            \item Dersom $a<1$, Konveregerer rekken absolutt.
+            \item Dersom $a>1$, Divergerer rekken.
+            \item Dersom $a=1$, gir testen ingen konklusjon.
+        \end{enumerate}
+        \subsection*{Rottesten:}
+        La $\suminfty{0}{a_n}$ være en rekke og anta at grensen $\lim_{n\to\infty}\sqrt[n]{\abs{a_n}}=a$ eksisterer(den kan være $\infty$!). Da gjelder:
+        \begin{enumerate}
+            \item Dersom $a<1$, konvergerer rekken absolutt.
+            \item Dersom $a>1$, divergerer rekken
+            \item Dersom $a=1$, gir testen ingen konklusjon
+        \end{enumerate}
         \subsection*{Viktige rekker:}
         \begin{enumerate}
             \item Rekken $\sum_{n=1}^\infty \frac{1}{n^p}$ konvergerer hviss $p > 1$ 
         \end{enumerate}
+    \section*{Rekker av funksjoner:}
+        \subsection*{Weierstrass' M-test:}
+        La $\suminfty{0}{v_n(x)}$ være en rekke av funksjoner definert på en mengde A. Anta det finnes en konvergent rekke (av tall) $\sum M_n$ slik at 
+        $\abs{v_n(a) \leq M_n}$ for alle n og alle alle $a\in A$. Da konvergerer rekken $\suminfty{0}{v_n(x)}$ uniformt og absolutt på A.
 \end{document}
