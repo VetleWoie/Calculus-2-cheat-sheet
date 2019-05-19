@@ -18,10 +18,13 @@
 \setlength{\columnseprule}{1pt}
 
 \def\abs#1{|#1|}
+\def\real{\mathbb{R}}
+\def\suminfty#1#2{\sum_{n=#1}^\infty #2}
+
 \begin{document}
     \section*{Uegentige Integraler:}
         \subsection*{Sammenligningskriteriet:}
-        La $f,g : [a:\infty)\rightarrow \mathbb{R}$ , kontinuerlig og positiv. Anta
+        La $f,g : [a:\infty)\rightarrow \real$ , kontinuerlig og positiv. Anta
         $f(x)\geq(x)$ for alle x:
         \begin{enumerate}[topsep = 0pt,partopsep = 0pt, itemsep = 0cm]
             \item Hvis $\int_a^\infty f(x) dx$ Konvergerer $\Rightarrow$ $\int_a^\infty g(x) dx$ Konvergerer
@@ -31,7 +34,7 @@
         La $f,g : [a:\infty)\rightarrow \mathbb{R}$ , kontinuerlig og positiv.
         \begin{enumerate}[topsep = 0pt,partopsep = 0pt, itemsep = 0cm]
             \item $\int_a^\infty f(x)dx$ Konvergerer og $\lim_{x\to\infty}\frac{g(x)}{f(x)}<\infty \Rightarrow \int_a^\infty g(x)$ Konvergerer 
-            \item $\int_a^\infty f(x)dx$ Divergerer og $\lim_{x\to\infty}\frac{g(x)}{f(x)}>0 \Rightarrow \int_a^\infty g(x)$ Divergerer
+            \item $\int_a^\infty f(x)dx$ Divergerer og $\lim_{x\to\infty}\frac{g(x)}{f(x)}>0 \Rightarrow \int_a^\infty g(x)$ \\Divergerer
         \end{enumerate}
         \subsection*{Viktige Integraler:}
         $\int_0^1 \frac{dx}{x^p}$ Konvergerer for $p<1$, divergerer for $p\geq1$\\
@@ -69,13 +72,31 @@
             $\lim_{n\to\infty}f'_n(x)=[\lim_{n\to\infty}f_n(x)]'$
             
     \section*{Rekker}
-        \subsection*{Divergenstesten}
-        $\sum_{n=0}^\infty a_n \text{Konveregerer} \Leftrightarrow \lim_{n\to\infty}a_n=0$
-        \subsection*{Egenskaper ved rekker}
+        \subsection*{Egenskaper ved rekker:}
         La $\sum_{n=0}^\infty a_n$ og $\sum_{n=0}^\infty b_n$ være konvergente rekker:
         \begin{enumerate}[topsep = 0pt,partopsep = 0pt, itemsep = 0cm]
             \item $\sum_{n=0}^\infty (a_n \pm b_n) = \sum_{n=0}^\infty a_n \pm \sum_{n=0}^\infty b_n$
             \item $\sum_{n=0}^\infty ca_n=c\sum_{n=0}^\infty a_n$
         \end{enumerate}
- 
+        \subsection*{Divergenstesten:}
+        $\sum_{n=0}^\infty a_n \text{Konveregerer} \Leftrightarrow \lim_{n\to\infty}a_n=0$
+        \subsection*{Integraltesten:}
+        Anta $f:[1,\infty)\to\real]$ er en pos., kont. og avtagende funksjon. Da konvergerer rekken $\sum_{n=1}^\infty f(n)$ hviss
+        integralet $\int_1^\infty f(x)dx$ \\konveregerer.
+        \subsection*{Sammenligningstesten:}
+        La $\suminfty{1}{a_n}$ og $\suminfty{1}{b_n}$ være to positive rekker
+        \begin{enumerate}
+            \item Anta at $\suminfty{1}{a_n}$ konvergerer og at det finnes et tall c slik at $b_n \leq c\cdot a_n$ for alle n. Da konveregerer $\suminfty{1}{b_n}$.
+            \item Anta at $\suminfty{1}{a_n}$ divergerer og at det finnes et positivt tall d slik at $b_n \geq d\cdot a_n$ for alle n. Da divergerer $\suminfty{1}{b_n}$
+        \end{enumerate}
+        \subsection*{Grensesammenligningstesten:}
+        La $\suminfty{1}{a_n}$ og $\suminfty{1}{b_n}$ være to positive rekker:
+        \begin{enumerate}
+            \item Anta at $\suminfty{1}{a_n}$ konvergerer og at $\lim_{n\to\infty}\frac{b_n}{a_n}<\infty$. Da konvergerer også $\suminfty{1}{b_n}$.
+            \item Anta at $\suminfty{1}{a_n}$ divergerer og at $\lim_{n\to\infty}>0$. Da \\divergerer også $\suminfty{1}{b_n}$
+        \end{enumerate}
+        \subsection*{Viktige rekker:}
+        \begin{enumerate}
+            \item Rekken $\sum_{n=1}^\infty \frac{1}{n^p}$ konvergerer hviss $p > 1$ 
+        \end{enumerate}
 \end{document}
