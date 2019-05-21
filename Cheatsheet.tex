@@ -20,6 +20,8 @@
 \def\abs#1{\lvert #1 \rvert}
 \def\real{\mathbb{R}}
 \def\suminfty#1#2{\sum_{n=#1}^\infty #2}
+\def\der#1#2#3{\frac{d #1}{d #2}\left( #3 \right)}
+\def\parder#1#2#3{\frac{\partial #1}{\partial #2}\left( #3 \right)}
 
 \begin{document}
     \section*{Uegentige Integraler:}
@@ -135,4 +137,11 @@
     \section*{Potensrekker:}
         \subsection*{Definisjon:}
         En Potensrekke er en funksjonsrekke på formen: $\suminfty{0}{a_n(x-a)^n}$
+
+    \section*{Flervariabel kalkulus:}
+        \subsection*{Kjerneregelen:}
+            Anta $h:\real^1\to\real^n$ og $x:\real^n\to\real^1$, er to deriverbare funksjoner. Anta så en funksjon $f:\real^1\to\real^1$ definert med:
+            $f = x(h)$. Da er:
+            $\der{f}{t}{t_0}=\parder{h}{x_1}{\hat{x_0}}\der{x_1}{t}{t_0}+\parder{h}{x_2}{\hat{x_0}}\der{x_2}{t}{t_0}+\dots+\parder{h}{x_n}{\hat{x_0}}\der{x_n}{t}{t_0}$
+        
 \end{document}
