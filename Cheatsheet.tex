@@ -1,4 +1,4 @@
-\documentclass[8pt,a4paper,twocolumn,twoside]{article}
+\documentclass[12pt,a4paper,twocolumn,twoside]{article}
 \usepackage[a4paper,total={20cm, 28.5cm},headsep=0.3cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{sectsty}
@@ -103,7 +103,7 @@
         La $\suminfty{1}{a_n}$ og $\suminfty{1}{b_n}$ være to positive rekker:
         \begin{enumerate}
             \item Anta at $\suminfty{1}{a_n}$ konvergerer og at $\lim_{n\to\infty}\frac{b_n}{a_n}<\infty$. Da konvergerer også $\suminfty{1}{b_n}$.
-            \item Anta at $\suminfty{1}{a_n}$ divergerer og at $\lim_{n\to\infty}>0$. Da \\divergerer også $\suminfty{1}{b_n}$
+            \item Anta at $\suminfty{1}{a_n}$ divergerer og at $\lim_{n\to\infty}\frac{b_n}{a_n}>0$. Da \\divergerer også $\suminfty{1}{b_n}$
         \end{enumerate}
         \subsection*{Forholdstesten:}
         La $\suminfty{0}{a_n}$ være en rekke og anta at grensen $\lim_{n\to\infty}\abs{\frac{a_{n+1}}{a_n}}=a$ eksisterer(Den kan være $\infty$!). Da gjelder:
@@ -129,6 +129,8 @@
         \subsection*{Viktige rekker:}
         \begin{enumerate}
             \item Rekken $\sum_{n=1}^\infty \frac{1}{n^p}$ konvergerer hviss $p > 1$ 
+            \item $\suminfty{0}{x^n}=\frac{1}{1-x}$, hvis $\abs{x}<1$
+            \item $\suminfty{0}{\frac{x^n}{n}} =-\ln(1-x)$
         \end{enumerate}
     \section*{Rekker av funksjoner:}
         \subsection*{Weierstrass' M-test:}
@@ -146,4 +148,29 @@
         \subsection*{Differensialet:}
         La $f:X\in\real^n\to\real$ være en funksjon, la $\hat{a}=(a_1,a_2,\dots,a_n)\in X$ Differensialet til $f$ i $\hat{a}$ er da en funksjon $h:\real^n\to\real$ definert
         med: $h(\hat{x})=f(\hat{a})+f_{x_1}(x_1-a_1)+f_{x_2}(x_2-a_2)+\dots+f_{x_n}(x_n-a_n)$
+    \section*{Kjente grenser:}
+        \subsection*{Logaritmiske og eksponentsielle:}
+        \begin{enumerate}
+            \item $\lim_{x\to0}(1+x)^{\frac{1}{x}}=e$
+            \item $\lim_{x\to\infty}\frac{n}{\sqrt[n]{n!}}=e$
+            \item $\lim_{x\to+\infty}\left(1+\frac{1}{x}\right)^x=e$
+            \item $\lim_{x\to+\infty}\left(1-\frac{1}{x}\right)^x=\frac{1}{e}$
+            \item $\lim_{x\to+\infty}\left(1+\frac{k}{x}\right)^{mx}=e^{mk}$
+            \item $\lim_{x\to+\infty}\left(\frac{x}{x+k}\right)^x=\frac{1}{e^k}$
+            \item $\lim_{x\to0}\left(\frac{a^x-1}{x}\right)^x=\ln(a),\; a>0$
+            \item $\lim_{x\to0}(1+a(e^{-x}-1))^{-\frac{1}{x}}=e^a$
+            \item $\lim_{x\to1}\frac{\ln(x)}{x-1}=1$
+            \item $\lim_{x\to0}\frac{\ln(x+1)}{x}=1$
+        \end{enumerate}
+        \subsection*{Trigonometriske:}
+        \begin{enumerate}
+            \item $\lim_{x\to0}\frac{\sin(x)}{x}=1$
+            \item $\lim_{x\to0}\frac{\sin(ax)}{ax}=1$
+            \item $\lim_{x\to0}\frac{1-\cos{x}}{x}=0$
+            \item $\lim_{x\to0}\frac{1-\cos{x}}{x^2}=\frac{1}{2}$
+            \item $\lim_{x\to0}\frac{\sin(ax)}{x}=a$
+            \item $\lim_{x\to0}\frac{\sin(ax)}{bx}=\frac{a}{b}$
+            \item $\lim_{x\to n^\pm}\tan\left(\pi x+\frac{\pi}{2}\right) = \mp\infty$ For alle $n\in\mathbb{N}$
+        \end{enumerate}
+        Hvis grensen ikke er her; HUSK L'HÔPITAL!!!
 \end{document}
